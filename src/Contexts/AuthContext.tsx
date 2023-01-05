@@ -39,6 +39,24 @@ export const AuthProvider = ({ children }: iDefaultProviderProps) => {
     loadUser();
   }, []);
 
+    const loadUserProducts = async () => {
+      const token = localStorage.getItem("@TOKEN");
+      try {
+        const { data } = await api.get<iProduct[]>("products", {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        });
+        setListProducts(data);
+        setSearch(data);
+      } catch (error) {
+        console.error(error);
+      } 
+    };
+
+    loadUserProducts();
+
+
   return (
     <AuthContext.Provider
       value={{
