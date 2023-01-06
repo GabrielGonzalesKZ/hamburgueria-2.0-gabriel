@@ -1,12 +1,13 @@
 import { StyledLogin } from "./styled";
 import { Link, Navigate } from "react-router-dom";
-import LoginImg from "../../assets/img/login.PNG";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
-import { AuthContext } from "../../Contexts/AuthContext";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../../Components/Schemas/LoginSchema";
 import { UserContext } from "../../Contexts/UserContext";
+import LoginImg from "../../assets/img/LogoImg.png"
+
+
 
 export const Login = () => {
   const {
@@ -15,6 +16,10 @@ export const Login = () => {
     formState: { errors },
   } = useForm({
     mode: "onBlur",
+    defaultValues: {
+      email: "",
+      password: "",
+    },
     resolver: yupResolver(loginSchema),
   });
   const { login } = useContext(UserContext);
@@ -38,7 +43,7 @@ export const Login = () => {
           {errors.email?.message && (
             <p className="error">{errors.email.message}</p>
           )}
-          <label htmlFor="name">Email</label>
+          <label htmlFor="email">Email</label>
           <input
             className="password"
             id="password"
@@ -62,7 +67,7 @@ export const Login = () => {
         </button>
       </div>
       <div className="image">
-        <img src={LoginImg} alt="logo" />
+        <img src="#" alt="logo" />
       </div>
     </StyledLogin>
   );

@@ -39,7 +39,7 @@ export interface iProduct {
 
 export interface iUserContext {
     registerUser: (data: iUserRegister) => void;
-    login: (data: iUserLogin) => void;
+    login: any;
 }
 
 export interface iAuthContext {

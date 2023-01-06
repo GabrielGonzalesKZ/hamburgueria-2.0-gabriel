@@ -1,6 +1,6 @@
 import { StyledRegister } from "./styled";
 import { Link, Navigate } from "react-router-dom";
-import LoginImg from "../../assets/img/login.PNG";
+// import LoginImg from "../../assets/img/login.PNG";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { useContext } from "react";
@@ -84,7 +84,7 @@ export const Register = () => {
         </form>
       </div>
       <div className="image">
-        <img src={LoginImg} alt="" />
+        <img src="#" alt="" />
       </div>
     </StyledRegister>
   );
