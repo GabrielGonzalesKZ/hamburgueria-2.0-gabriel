@@ -7,8 +7,6 @@ import { loginSchema } from "../../Components/Schemas/LoginSchema";
 import { UserContext } from "../../Contexts/UserContext";
 import LoginImg from "../../assets/img/LogoImg.png"
 
-
-
 export const Login = () => {
   const {
     register,
